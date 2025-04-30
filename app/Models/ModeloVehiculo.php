@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Insumo extends Model
+class ModeloVehiculo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'marca', 'descripcion', 'cantidad', 'estado'];
+    protected $fillable = [
+        'nombre',
+        'stock_maximo',
+        'registrados',
+    ];
 }

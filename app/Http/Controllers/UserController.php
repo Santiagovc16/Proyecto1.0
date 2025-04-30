@@ -43,6 +43,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'rol' => $request->rol,
+               
         ]);
 
         return redirect()->route('users.index')->with('success', 'Usuario creado correctamente.');
@@ -69,6 +70,7 @@ class UserController extends Controller
             'email' => "required|email|unique:users,email,$id",
             'password' => 'nullable|min:6',
             'rol' => 'required',
+
         ]);
 
         $user = User::findOrFail($id);

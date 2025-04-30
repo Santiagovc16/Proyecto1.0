@@ -92,12 +92,10 @@
     <div class="sidebar-section">
         <h6>📦 Administración de Insumos</h6>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
-            <a href="{{ url('/insumos/create') }}">🧾 Crear Insumo</a>
             <a href="{{ route('insumos.bandeja') }}">🖥️ Bandeja de Insumos</a>
             <a href="{{ url('/bandeja') }}">📦 Bandeja Completa</a>
             <a href="{{ route('insumos.index') }}">📋 Ver Todos los Insumos</a>
         @else
-            <a class="disabled">🔒 Crear Insumo</a>
             <a class="disabled">🔒 Bandeja de Insumos</a>
             <a class="disabled">🔒 Bandeja Completa</a>
             <a class="disabled">🔒 Ver Insumos</a>

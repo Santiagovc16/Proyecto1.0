@@ -22,7 +22,7 @@
             <input name="name" type="text" class="form-control" placeholder="Nombre completo" required>
         </div>
         
-        <div class="mb-3">
+    <div class="mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
             <input name="apellidos" type="text" class="form-control" placeholder="Apellidos completos" required>
         </div>
@@ -31,6 +31,7 @@
             <label for="email" class="form-label">Correo electrónico</label>
             <input name="email" type="email" class="form-control" placeholder="usuario@correo.com" required>
         </div>
+        
 
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>

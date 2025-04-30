@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(AdminVitalicioSeeder::class);
+        $this->call(ModeloVehiculoSeeder::class);
     }
 }

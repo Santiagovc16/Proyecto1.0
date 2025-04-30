@@ -23,7 +23,9 @@
             <select name="insumo_id" id="insumo_id" class="form-select" required>
                 <option value="">-- Selecciona --</option>
                 @foreach($insumos as $insumo)
-                    <option value="{{ $insumo->id }}">{{ $insumo->nombre }} ({{ $insumo->cantidad }} disponibles)</option>
+                    @if(strtolower($insumo->estado) !== 'averiado')
+                        <option value="{{ $insumo->id }}">{{ $insumo->nombre }} ({{ $insumo->cantidad }} disponibles)</option>
+                    @endif
                 @endforeach
             </select>
         </div>

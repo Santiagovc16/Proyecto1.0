@@ -10,7 +10,7 @@ class ReportePrestamosController extends Controller
 {
     public function generarPDF()
     {
-        $prestamos = Prestamo::with('usuario', 'insumo')->get();
+        $prestamos = Prestamo::with('user', 'insumo')->get();
         $pdf = Pdf::loadView('reportes.prestamos', compact('prestamos'));
         return $pdf->download('reporte_prestamos.pdf');
     }

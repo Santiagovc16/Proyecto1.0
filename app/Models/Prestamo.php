@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Prestamo extends Model
 {
@@ -11,7 +12,7 @@ class Prestamo extends Model
 
     protected $fillable = ['user_id', 'insumo_id', 'estado', 'fecha_inicio', 'fecha_fin'];
 
-    public function usuario()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

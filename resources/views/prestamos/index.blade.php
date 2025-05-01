@@ -29,7 +29,7 @@
                 @forelse($prestamos as $prestamo)
                     <tr>
                         <td>{{ $prestamo->insumo->nombre }}</td>
-                        <td>{{ $prestamo->user->name ?? 'Desconocido' }}</td>
+                        <td>{{ optional($prestamo->usuario)->name ?? 'Desconocido' }}</td>
                         <td>{{ ucfirst($prestamo->estado) }}</td>
                         <td>{{ $prestamo->fecha_inicio }}</td>
                         <td>{{ $prestamo->fecha_fin }}</td>

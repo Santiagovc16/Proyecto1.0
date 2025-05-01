@@ -1,8 +1,58 @@
 @extends('layouts.app')
 
+@push('styles')
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 13px;
+        background-color: #ffffff;
+    }
+    .report-title {
+        background-color: #f1f1f1;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .table thead {
+        background-color: #007bff;
+        color: white;
+    }
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .table tr:hover {
+        background-color: #f1f1f1;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        font-size: 14px;
+        color: white;
+        background-color: #343a40;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 20px;
+    }
+</style>
+@endpush
+
 @section('content')
 <div class="container">
-    <h2 class="mb-4">📁 Reporte de Préstamos</h2>
+    <div class="report-title">
+        <h2 class="mb-0">📁 Reporte de Préstamos</h2>
+        <small>Control de calidad de software — {{ now()->format('d/m/Y') }}</small>
+    </div>
 
     <table class="table table-bordered table-hover shadow-sm">
         <thead class="table-dark">
@@ -35,7 +85,7 @@
         </tbody>
     </table>
     <div class="text-center mt-4">
-        <a href="{{ route('users.index') }}" class="btn btn-outline-dark">
+        <a href="{{ route('users.index') }}" class="btn">
             ⬅ Volver al Panel Principal
         </a>
     </div>

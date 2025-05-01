@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\PrestamoController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Controllers\ReportePrestamosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/prestamos', [PrestamoController::class, 'index'])->name('prestamos.index');
     Route::get('/prestamos/create', [PrestamoController::class, 'create'])->name('prestamos.create');
     Route::post('/prestamos', [PrestamoController::class, 'store'])->name('prestamos.store');
+    Route::get('/prestamos/pdf', [ReportePrestamosController::class, 'generarPDF'])->name('reporte.prestamos.pdf');
     Route::get('/admin/prestamos', [PrestamoController::class, 'adminIndex'])->name('prestamos.admin');
     Route::post('/admin/prestamos/{prestamo}/estado', [PrestamoController::class, 'cambiarEstado'])->name('prestamos.estado');
 });
-

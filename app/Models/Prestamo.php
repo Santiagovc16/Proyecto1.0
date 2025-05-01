@@ -11,7 +11,7 @@ class Prestamo extends Model
 
     protected $fillable = ['user_id', 'insumo_id', 'estado', 'fecha_inicio', 'fecha_fin'];
 
-    public function user()
+    public function usuario()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

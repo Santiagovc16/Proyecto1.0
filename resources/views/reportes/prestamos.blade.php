@@ -20,8 +20,8 @@
             @forelse($prestamos as $prestamo)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $prestamo->insumo->nombre }}</td>
-                    <td>{{ $prestamo->user->name }}</td>
+                    <td>{{ $prestamo->insumo->nombre ?? 'Insumo no disponible' }}</td>
+                    <td>{{ $prestamo->usuario->name ?? 'Usuario no disponible' }}</td>
                     <td>{{ $prestamo->fecha_inicio }}</td>
                     <td>{{ $prestamo->fecha_fin }}</td>
                     <td>{{ ucfirst($prestamo->estado) }}</td>

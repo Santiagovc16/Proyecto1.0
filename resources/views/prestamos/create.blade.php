@@ -43,5 +43,11 @@
         <button type="submit" class="btn btn-success">Enviar Solicitud</button>
         <a href="{{ route('prestamos.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
+    
 </div>
+    <div class="text-center mt-4">
+        <a href="{{ route('users.index') }}" class="btn btn-outline-dark">
+            ⬅ Volver al Panel Principal
+        </a>
+    </div>
 @endsection

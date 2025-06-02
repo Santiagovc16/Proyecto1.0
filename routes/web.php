@@ -8,6 +8,7 @@ use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\PrestamoController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\ReportePrestamosController;
+use App\Http\Controllers\SorprendemeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/prestamos/pdf', [ReportePrestamosController::class, 'generarPDF'])->name('reporte.prestamos.pdf');
     Route::get('/admin/prestamos', [PrestamoController::class, 'adminIndex'])->name('prestamos.admin');
     Route::post('/admin/prestamos/{prestamo}/estado', [PrestamoController::class, 'cambiarEstado'])->name('prestamos.estado');
+
+    Route::get('/dashboard/sorprendeme', [SorprendemeController::class, 'index'])->name('dashboard.sorprendeme');
 });

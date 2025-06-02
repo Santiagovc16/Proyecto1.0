@@ -168,6 +168,7 @@
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
             <a href="{{ route('insumos.bandeja') }}">Bandeja de Insumos</a>
             <a href="{{ route('insumos.index') }}">Ver Todos los Insumos</a>
+            <a href="{{ route('dashboard.sorprendeme') }}">Graficas</a>
         @else
             <a class="disabled">Bandeja de Insumos</a>
             <a class="disabled">Ver Insumos</a>
@@ -204,6 +205,8 @@
         @else
             <a class="disabled">Acceso a Reportes</a>
         @endif
+      
+</li>
     </div>
 </div>
 
@@ -213,7 +216,7 @@
              Sistema de Gestión Vehicular
         </h1>
         <p style="font-size: 1.25rem; color:rgb(5, 99, 130); margin-top: 0.75rem;">
-            Control avanzado de préstamos de autos deportivos y de alta gama
+             avanzado de préstamos de autos deportivos y de alta gama
         </p>
     </div>
     <div class="container mb-5">

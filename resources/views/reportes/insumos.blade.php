@@ -32,5 +32,11 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class="text-center mt-4">
+        <a href="{{ route('users.index') }}" class="btn btn-outline-primary">
+            ⬅ Volver al Menú Principal
+        </a>
+    </div>
 </div>
 @endsection

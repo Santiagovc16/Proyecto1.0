@@ -52,4 +52,9 @@
         </table>
     </div>
 </div>
+<div class="text-center mt-4">
+    <a href="{{ route('users.index') }}" class="btn btn-outline-dark">
+        ⬅ Volver al Panel Principal
+    </a>
+</div>
 @endsection

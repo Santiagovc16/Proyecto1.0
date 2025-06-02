@@ -3,7 +3,7 @@
 @section('content')
 <style>
     body {
-        background: linear-gradient(145deg, #d7dde8, #a3b4c8);
+        background: linear-gradient(145deg, #e2e8f0, #cbd5e1);
         min-height: 100vh;
         font-family: 'Titillium Web', sans-serif;
         background-attachment: fixed;
@@ -76,20 +76,21 @@
 
     .sidebar-section h6 {
         margin-top: 1.5rem;
-        font-weight: bold;
-        color: #FFD700;
-        font-size: 1rem;
+        font-weight: 700;
+        color: #00d1ff;
+        font-size: 0.95rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        border-bottom: 1px solid #444;
-        padding-bottom: 5px;
+        padding-bottom: 4px;
+        border-left: 4px solid #00d1ff;
+        padding-left: 8px;
     }
 
     .sidebar-section a {
         display: block;
         margin-bottom: 10px;
         text-decoration: none;
-        color: #b0c4ff;
+        color: #00f2ff;
         font-size: 0.95rem;
         padding: 8px 14px;
         border-radius: 6px;
@@ -97,13 +98,16 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.25);
         transition: all 0.3s ease;
         border: 1px solid transparent;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
     }
 
     .sidebar-section a:hover {
         background: linear-gradient(145deg, #00f2ff, #007a99);
         color: #101820;
-        box-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
-        border: 1px solid rgba(0, 224, 255, 0.5);
+        box-shadow: 0 4px 10px rgba(0, 242, 255, 0.35);
+        border: 1px solid rgba(0, 224, 255, 0.4);
     }
 
     .sidebar-section a.disabled {
@@ -116,6 +120,23 @@
         font-family: 'Orbitron', sans-serif;
         letter-spacing: 0.5px;
     }
+</style>
+
+<style>
+@keyframes slideInSidebar {
+    0% {
+        transform: translateX(-280px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#sidebar {
+    animation: slideInSidebar 0.8s ease-out;
+}
 </style>
 
 <style>
@@ -188,7 +209,7 @@
 
 <div id="mainContent">
     <div class="header-box">
-        <h1 style="font-size: 3rem; font-weight: 800; color: #00e0ff; text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);">
+        <h1 style="font-size: 3rem; font-weight: 800; color:rgb(188, 188, 188); text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);">
              Sistema de Gestión Vehicular
         </h1>
         <p style="font-size: 1.25rem; color: #e0e6ed; margin-top: 0.75rem;">
@@ -197,14 +218,8 @@
     </div>
     <div class="container mb-5">
         <div class="row justify-content-center g-4">
-            <div class="col-md-4 text-center">
-                <img src="{{ asset('img/autos/ferrari.jpg') }}" alt="Ferrari" class="car-image" style="width: 100%; max-width: 300px; border-radius: 12px; object-fit: cover;">
-                <div style="margin-top: 0.5rem; font-weight: 600; color: #e74c3c;"></div>
-            </div>
-            <div class="col-md-4 text-center">
-                <img src="{{ asset('img/autos/lamborghini.jpg') }}" alt="Lamborghini" class="car-image" style="width: 100%; max-width: 300px; border-radius: 12px; object-fit: cover;">
-                <div style="margin-top: 0.5rem; font-weight: 600; color: #f1c40f;"></div>
-            </div>
+           
+           
         </div>
     </div>
     <hr class="mb-4">

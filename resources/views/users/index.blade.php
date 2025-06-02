@@ -2,15 +2,31 @@
 
 @section('content')
 <style>
+    body {
+        background: linear-gradient(145deg, #d7dde8, #a3b4c8);
+        min-height: 100vh;
+        font-family: 'Titillium Web', sans-serif;
+        background-attachment: fixed;
+    }
+    .header-box {
+        background: linear-gradient(135deg, #1b1f33, #2e3a59);
+        padding: 3rem 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        max-width: 820px;
+        margin: 0 auto 3rem auto;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
     #sidebar {
         position: fixed;
         top: 0;
         left: 0;
         height: 100%;
         width: 250px;
-        background: #1e1e2f;
+        background: #101820;
         padding: 20px;
-        border-right: 2px solid #00f2ff;
+        border-right: 2px solid #4DD0E1;
         transform: translateX(-260px);
         transition: transform 0.3s ease;
         z-index: 1000;
@@ -54,21 +70,40 @@
         margin-left: 260px;
     }
 
+    .sidebar-section {
+        margin-bottom: 1.5rem;
+    }
+
     .sidebar-section h6 {
-        margin-top: 1.2rem;
+        margin-top: 1.5rem;
         font-weight: bold;
-        color: #00f2ff;
+        color: #FFD700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 5px;
     }
 
     .sidebar-section a {
         display: block;
         margin-bottom: 10px;
         text-decoration: none;
-        color: #ddd;
+        color: #b0c4ff;
+        font-size: 0.95rem;
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: linear-gradient(145deg, #1b1f33, #2e3a59);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
     }
 
     .sidebar-section a:hover {
-        color: #00f2ff;
+        background: linear-gradient(145deg, #00f2ff, #007a99);
+        color: #101820;
+        box-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
+        border: 1px solid rgba(0, 224, 255, 0.5);
     }
 
     .sidebar-section a.disabled {
@@ -83,6 +118,24 @@
     }
 </style>
 
+<style>
+    .car-image {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .car-image:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0, 224, 255, 0.25);
+    }
+</style>
+
+<style>
+    .header-box:hover {
+        box-shadow: 0 20px 45px rgba(0, 224, 255, 0.3), 0 0 15px rgba(0, 224, 255, 0.2);
+        transition: box-shadow 0.4s ease-in-out;
+    }
+</style>
+
 <button id="sidebarToggle">
     <span>&#9776;</span>
 </button>
@@ -93,11 +146,9 @@
         <h6>📦 Administración de Insumos</h6>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
             <a href="{{ route('insumos.bandeja') }}">🖥️ Bandeja de Insumos</a>
-            <a href="{{ url('/bandeja') }}">📦 Bandeja Completa</a>
             <a href="{{ route('insumos.index') }}">📋 Ver Todos los Insumos</a>
         @else
             <a class="disabled">🔒 Bandeja de Insumos</a>
-            <a class="disabled">🔒 Bandeja Completa</a>
             <a class="disabled">🔒 Ver Insumos</a>
         @endif
     </div>
@@ -136,11 +187,25 @@
 </div>
 
 <div id="mainContent">
-    <div class="text-center mb-4">
-        <h1 style="font-size: 2.2rem; font-weight: bold; color: #0d6efd;">
-            📦 InventarioApp
+    <div class="header-box">
+        <h1 style="font-size: 3rem; font-weight: 800; color: #00e0ff; text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);">
+             Sistema de Gestión Vehicular
         </h1>
-        <h4 class="text-muted">📊 Panel de Administración</h4>
+        <p style="font-size: 1.25rem; color: #e0e6ed; margin-top: 0.75rem;">
+            Control avanzado de préstamos de autos deportivos y de alta gama
+        </p>
+    </div>
+    <div class="container mb-5">
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('img/autos/ferrari.jpg') }}" alt="Ferrari" class="car-image" style="width: 100%; max-width: 300px; border-radius: 12px; object-fit: cover;">
+                <div style="margin-top: 0.5rem; font-weight: 600; color: #e74c3c;"></div>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('img/autos/lamborghini.jpg') }}" alt="Lamborghini" class="car-image" style="width: 100%; max-width: 300px; border-radius: 12px; object-fit: cover;">
+                <div style="margin-top: 0.5rem; font-weight: 600; color: #f1c40f;"></div>
+            </div>
+        </div>
     </div>
     <hr class="mb-4">
 

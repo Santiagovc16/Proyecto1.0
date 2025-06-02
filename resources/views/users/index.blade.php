@@ -26,7 +26,7 @@
         width: 250px;
         background: #101820;
         padding: 20px;
-        border-right: 2px solid #4DD0E1;
+        border-right: 1px solid #2e3a59;
         transform: translateX(-260px);
         transition: transform 0.3s ease;
         z-index: 1000;
@@ -77,12 +77,12 @@
     .sidebar-section h6 {
         margin-top: 1.5rem;
         font-weight: 700;
-        color: #00d1ff;
+        color: #a8ff60;
         font-size: 0.95rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         padding-bottom: 4px;
-        border-left: 4px solid #00d1ff;
+        border-left: 4px solid #a8ff60;
         padding-left: 8px;
     }
 
@@ -94,7 +94,7 @@
         font-size: 0.95rem;
         padding: 8px 14px;
         border-radius: 6px;
-        background: linear-gradient(145deg, #1b1f33, #2e3a59);
+        background-color: #1c2331;
         box-shadow: 0 2px 5px rgba(0,0,0,0.25);
         transition: all 0.3s ease;
         border: 1px solid transparent;
@@ -164,45 +164,45 @@
 <div id="sidebar">
     <div style="height: 60px;"></div>
     <div class="sidebar-section">
-        <h6>📦 Administración de Insumos</h6>
+        <h6>Administración de Insumos</h6>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
-            <a href="{{ route('insumos.bandeja') }}">🖥️ Bandeja de Insumos</a>
-            <a href="{{ route('insumos.index') }}">📋 Ver Todos los Insumos</a>
+            <a href="{{ route('insumos.bandeja') }}">Bandeja de Insumos</a>
+            <a href="{{ route('insumos.index') }}">Ver Todos los Insumos</a>
         @else
-            <a class="disabled">🔒 Bandeja de Insumos</a>
-            <a class="disabled">🔒 Ver Insumos</a>
+            <a class="disabled">Bandeja de Insumos</a>
+            <a class="disabled">Ver Insumos</a>
         @endif
     </div>
 
     <div class="sidebar-section">
-        <h6>📄 Solicitudes de Préstamo</h6>
-        <a href="{{ url('/prestamos/create') }}">➕ Crear Préstamo</a>
-        <a href="{{ url('/prestamos') }}">🆕 Nuevas Solicitudes</a>
+        <h6>Solicitudes de Préstamo</h6>
+        <a href="{{ url('/prestamos/create') }}">Crear Préstamo</a>
+        <a href="{{ url('/prestamos') }}">Nuevas Solicitudes</a>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
-            <a href="{{ url('/admin/prestamos') }}">🗂️ Aprobación</a>
+            <a href="{{ url('/admin/prestamos') }}">Aprobación</a>
         @else
-            <a class="disabled">🔒 Aprobación</a>
+            <a class="disabled">Aprobación</a>
         @endif
     </div>
 
     <div class="sidebar-section">
-        <h6>👥 Administración de Usuarios</h6>
+        <h6>Administración de Usuarios</h6>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
-            <a href="{{ route('users.create') }}">👤 Crear Usuario</a>
-            <a href="#" onclick="toggleUsuarios()">👥 Mostrar/Ocultar Usuarios</a>
+            <a href="{{ route('users.create') }}">Crear Usuario</a>
+            <a href="#" onclick="toggleUsuarios()">Mostrar/Ocultar Usuarios</a>
         @else
-            <a class="disabled">🔒 Crear Usuario</a>
+            <a class="disabled">Crear Usuario</a>
         @endif
     </div>
 
     <div class="sidebar-section">
-        <h6>📊 Generación de Reportes</h6>
+        <h6>Generación de Reportes</h6>
         @if(in_array(auth()->user()->rol, ['administrador', 'supervisor']))
-            <a href="{{ route('reportes.insumos') }}">📦 Reporte de Insumos</a>
-            <a href="{{ route('reportes.prestamos') }}">📁 Reporte de Préstamos</a>
-            <a href="{{ route('reportes.disponibles') }}">📍 Insumos Disponibles</a>
+            <a href="{{ route('reportes.insumos') }}">Reporte de Insumos</a>
+            <a href="{{ route('reportes.prestamos') }}">Reporte de Préstamos</a>
+            <a href="{{ route('reportes.disponibles') }}">Insumos Disponibles</a>
         @else
-            <a class="disabled">🔒 Acceso a Reportes</a>
+            <a class="disabled">Acceso a Reportes</a>
         @endif
     </div>
 </div>

@@ -9,14 +9,14 @@
         background-attachment: fixed;
     }
     .header-box {
-        background: linear-gradient(135deg, #1b1f33, #2e3a59);
+        background: linear-gradient(135deg, #f0f4f8, #dce3ec);
         padding: 3rem 2rem;
         border-radius: 1.5rem;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         max-width: 820px;
         margin: 0 auto 3rem auto;
         text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.08);
     }
     #sidebar {
         position: fixed;
@@ -146,7 +146,7 @@
 
     .car-image:hover {
         transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(0, 224, 255, 0.25);
+        box-shadow: 0 12px 30px rgba(107, 127, 227, 0.25);
     }
 </style>
 
@@ -209,10 +209,10 @@
 
 <div id="mainContent">
     <div class="header-box">
-        <h1 style="font-size: 3rem; font-weight: 800; color:rgb(188, 188, 188); text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);">
+        <h1 style="font-size: 3rem; font-weight: 800; color: #1c1c1c; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);">
              Sistema de Gestión Vehicular
         </h1>
-        <p style="font-size: 1.25rem; color: #e0e6ed; margin-top: 0.75rem;">
+        <p style="font-size: 1.25rem; color:rgb(5, 99, 130); margin-top: 0.75rem;">
             Control avanzado de préstamos de autos deportivos y de alta gama
         </p>
     </div>
